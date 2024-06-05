@@ -171,7 +171,17 @@ function Signup(){
                     <FaGithub className=" text-2xl text-white"/>
                     <p className=" text-xl text-white">Sign in with Github</p>
                   </motion.div>
-
+                  <div>
+                <p>
+                Default to Login
+                </p>
+                <p>
+                Email: venu1234@gmail.com
+                </p>
+                <p>
+             Password: Venu@1234
+             </p>
+              </div>
 
 
             </div>
