@@ -14,3 +14,20 @@ export const SET_PROJECTS_NULL=()=>{
         type:"SET_PROJECTS_NULL",
     }
 }
+
+
+export const DELETE_PROJECT = 'DELETE_PROJECT';
+
+
+export const deleteProject = (projectId) => {
+  return {
+    type: DELETE_PROJECT,
+    payload: projectId
+  };
+};
+
+
+
+
+
+

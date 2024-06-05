@@ -15,6 +15,11 @@ const ProjectReducer=(state=null,action)=>{
                 ...state,
                 projects:null
             }
+            case "DELETE_PROJECT":
+                return {
+                  ...state,
+                  projects: state.projects.filter(project => project.id !== action.payload)
+                };
             default :
               return state
     }}
