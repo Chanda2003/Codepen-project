@@ -1,4 +1,4 @@
-import { signInWithRedirect } from "firebase/auth";
+import { signInWithPopup, signInWithRedirect } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 import { auth } from "../Config/Firebase.config.js";
 import { GithubAuthProvider } from "firebase/auth";
@@ -11,18 +11,32 @@ const githubProvider=new GithubAuthProvider()
 
 export const signinwithGoogle= async()=>{
 
-    await signInWithRedirect(auth,googleProvider).then(userCred =>{
-        window.location.reload()
-    })
-
+    // await signInWithRedirect(auth,googleProvider).then(userCred =>{
+    //     window.location.reload()
+    // })
+    try {
+        const result = await signInWithPopup(auth, googleProvider);
+        const user = result.user;
+        console.log("Google user signed in:", user);
+        // You can redirect the user or do further processing here
+    } catch (error) {
+        console.error("Google sign-in error:", error);
+    }
 }
 
 export const signinwithGitHub= async()=>{
 
-    await signInWithRedirect(auth,githubProvider).then(userCred =>{
-        window.location.reload()
-    })
-
+    // await signInWithRedirect(auth,githubProvider).then(userCred =>{
+    //     window.location.reload()
+    // })
+    try {
+        const result = await signInWithPopup(auth, githubProvider);
+        const user = result.user;
+        console.log("GitHub user signed in:", user);
+        // You can redirect the user or do further processing here
+    } catch (error) {
+        console.error("GitHub sign-in error:", error);
+    }
 }
 
 export const Menus=[
